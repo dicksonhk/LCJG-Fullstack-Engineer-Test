@@ -11,7 +11,7 @@ Follow the steps to setup a mysql database in local
 You can use any *python* server framwork to implement a simple web server with the following routes (using the database in task 1)
 - API 1 - list customers basic details with able to search by first name, last name and order by credit limit
 - API 2 - get full customers details by customerNumber
-- API 3 - update customers data by customerNumber
+- API 3 - update customers first name and last name, credit limit by customerNumber
 
 
 **Task 3 :**
