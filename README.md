@@ -1,5 +1,5 @@
 # LCJG-Fullstack-Engineer-Test
-Backend engineer interview test for LCJG and you need to finish it within 24 hours.
+Fullstack engineer interview test for LCJG and you need to finish it within 24 hours.
 
 **Task 1 :**
 Follow the steps to setup a mysql database in local
