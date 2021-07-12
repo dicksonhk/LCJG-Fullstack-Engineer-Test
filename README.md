@@ -15,14 +15,11 @@ You can use any *python* server framwork to implement a simple web server with t
 
 
 **Task 3 :**
-Create a single page app by using one of the following frontend framwork
-- Reactjs
-- Angular
-- Vue
+Create a single page app by using **Reactjs**, **Angular** or **Vue** to implement the follwing requirements 
 
-1, Create a table view to present the result from API 1
-2, Present the details view when click on record, the detail view should show all the data from API 2
-3, Allow user to edit the first name and last name in the table view and update it to server 
+- Create a table view to present the result from API 1
+- Present the details view when click on record, the detail view should show all the data from API 2
+- Allw user to edit the first name and last name in the table view and update it to server 
 
 
 
