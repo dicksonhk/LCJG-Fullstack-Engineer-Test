@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "db",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "db",
+            "database": "classicmodels",
+            "username": "user",
+            "password": "for-user-test-only"
+        }
+    ],
+    "python.formatting.provider": "black"
+}

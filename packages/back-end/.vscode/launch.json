@@ -1,6 +1,23 @@
 {
     "configurations": [
         {
+            "name": "Python: Uvicorn",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "env": {},
+            "args": [
+                "src:app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8080",
+                "--reload"
+            ],
+            "justMyCode": false,
+            "jinja": true
+        },
+        {
             "name": "Python: Attach",
             "type": "python",
             "request": "attach",
@@ -10,40 +27,55 @@
             }
         },
         {
-            "name": "Python: Flask",
+            "name": "Python: Remote Attach",
             "type": "python",
-            "request": "launch",
-            "module": "flask",
-            "env": {
-                "FLASK_APP": "src/app.py",
-                "FLASK_ENV": "development",
-                "FLASK_DEBUG": "0"
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 5678
             },
-            "args": [
-                "run",
-                "--host",
-                "0.0.0.0",
-                "--port",
-                "8080",
-                "--no-debugger",
-                "--no-reload"
-            ],
-            "jinja": true
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "/usr/src/app"
+                }
+            ]
         },
-        {
-            "name": "Docker: Python - Flask",
-            "type": "docker",
-            "request": "launch",
-            "preLaunchTask": "docker-run: debug",
-            "python": {
-                "pathMappings": [
-                    {
-                        "localRoot": "${workspaceFolder}",
-                        "remoteRoot": "/app"
-                    }
-                ],
-                "projectType": "flask"
-            }
-        }
+        // {
+        //     "name": "Python: Flask",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "module": "flask",
+        //     "env": {
+        //         "FLASK_APP": "src/app.py",
+        //         "FLASK_ENV": "development",
+        //         "FLASK_DEBUG": "0"
+        //     },
+        //     "args": [
+        //         "run",
+        //         "--host",
+        //         "0.0.0.0",
+        //         "--port",
+        //         "8080",
+        //         "--no-debugger",
+        //         "--no-reload"
+        //     ],
+        //     "jinja": true
+        // },
+        // {
+        //     "name": "Docker: Python - Flask",
+        //     "type": "docker",
+        //     "request": "launch",
+        //     "preLaunchTask": "docker-run: debug",
+        //     "python": {
+        //         "pathMappings": [
+        //             {
+        //                 "localRoot": "${workspaceFolder}",
+        //                 "remoteRoot": "/var/app"
+        //             }
+        //         ],
+        //         "projectType": "flask"
+        //     }
+        // }
     ]
 }
