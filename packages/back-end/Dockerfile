@@ -35,6 +35,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
-RUN pip install debugpy
+RUN pip install -U debugpy --user
 
 RUN pip install -U black --user
