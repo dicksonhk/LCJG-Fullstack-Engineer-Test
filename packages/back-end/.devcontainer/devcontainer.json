@@ -13,7 +13,7 @@
 
 	// The 'service' property is the name of the service for the container that VS Code should
 	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
-	"service": "backend",
+	"service": "api",
 
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
@@ -22,7 +22,23 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"python.pythonPath": "/usr/local/bin/python",
-		"python.languageServer": "Pylance"
+		"python.languageServer": "Pylance",
+		"python.formatting.provider": "black",
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"previewLimit": 50,
+				"server": "db",
+				"port": 3306,
+				"driver": "MySQL",
+				"name": "db",
+				"database": "classicmodels",
+				"username": "user",
+				"password": "for-user-test-only"
+			}
+		]
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
