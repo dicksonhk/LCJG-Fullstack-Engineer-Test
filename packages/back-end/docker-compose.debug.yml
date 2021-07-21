@@ -1,19 +1,51 @@
 version: "3.4"
 
 services:
-  backend:
-    image: backend
+  db:
+    image: mysql:8.0
+    command: "--default-authentication-plugin=mysql_native_password"
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      TZ: "+00:00"
+      MYSQL_DATABASE: "classicmodels"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "for-user-test-only"
+      MYSQL_ROOT_PASSWORD: "for-root-test-only"
+    networks:
+      - default
+    ports:
+      - "3306:3306"
+
+  api:
     build:
       context: .
       dockerfile: ./Dockerfile
+      target: debug
+    volumes:
+    - .:/var/app
     command:
       [
         "sh",
         "-c",
-        "pip install debugpy -t /tmp && python /tmp/debugpy --listen 0.0.0.0:5678 -m flask run --no-debugger --no-reload --host 0.0.0.0 --port 8080",
+        "pip install debugpy -t /tmp && python /tmp/debugpy --listen 0.0.0.0:5678 -m uvicorn src:app --host 0.0.0.0 --port 8080 --reload",
       ]
+    environment:
+      FLASK_APP: "src/app.py"
+      DB_USER: "user"
+      DB_PASS: "for-user-test-only"
+      DB_HOST: "db"
+      DB_NAME: "classicmodels"
     ports:
       - 8080:8080
       - 5678:5678
-    environment:
-      - FLASK_APP=src/app.py
+    networks:
+      - default
+
+volumes:
+  db-data:
+
+networks:
+  default:
+    name: app-network
