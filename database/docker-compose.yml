@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    build: .
+    environment:
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'for-user-test-only'
+      MYSQL_ROOT_PASSWORD: 'for-root-test-only'
+    ports:
+      - "3306:3306"
+    networks:
+      - default
+networks:
+  default:
+    name: app-network
