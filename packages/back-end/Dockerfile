@@ -24,7 +24,7 @@ FROM base as prod
 COPY . .
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["uvicorn", "src:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["python", "-m", "uvicorn", "src:app", "--host", "0.0.0.0", "--port", "8080"]
 
 # # Debug image
 FROM base as debug
