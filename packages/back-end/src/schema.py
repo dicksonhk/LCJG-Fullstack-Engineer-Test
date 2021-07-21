@@ -68,14 +68,14 @@ class Query(ObjectType):
         query = query.filter(*_and)
 
         # order by
-        if (
-            bool(kwargs.get("orderByCreditLimitAsc"))
-            and bool(kwargs.get("orderByCreditLimitDesc")) is False
+        if bool(kwargs.get("orderByCreditLimitAsc")) and not bool(
+            kwargs.get("orderByCreditLimitDesc")
         ):
-            if bool(kwargs.get("orderByCreditLimitAsc")):
                 query = query.order_by(CustomerModel.creditLimit.asc())
-            elif bool(kwargs.get("orderByCreditLimitDesc")):
-                query = query.order_by(CustomerModel.creditLimit.asc())
+        elif bool(kwargs.get("orderByCreditLimitDesc")) and not bool(
+            kwargs.get("orderByCreditLimitAsc")
+        ):
+            query = query.order_by(CustomerModel.creditLimit.desc())
 
         # limit
         if isinstance(kwargs.get("limit"), int):
