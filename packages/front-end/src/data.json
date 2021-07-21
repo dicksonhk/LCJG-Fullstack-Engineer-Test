@@ -1,0 +1,84 @@
+{
+  "customers": [
+    {
+      "customerNumber": "103",
+      "customerName": "Atelier graphique",
+      "addressLine1": "54, rue Royale",
+      "addressLine2": null,
+      "country": "France",
+      "creditLimit": 21000
+    },
+    {
+      "customerNumber": "112",
+      "customerName": "Signal Gift Stores",
+      "addressLine1": "8489 Strong St.",
+      "addressLine2": null,
+      "country": "USA",
+      "creditLimit": 71800
+    },
+    {
+      "customerNumber": "114",
+      "customerName": "Australian Collectors, Co.",
+      "addressLine1": "636 St Kilda Road",
+      "addressLine2": "Level 3",
+      "country": "Australia",
+      "creditLimit": 117300
+    },
+    {
+      "customerNumber": "119",
+      "customerName": "La Rochelle Gifts",
+      "addressLine1": "67, rue des Cinquante Otages",
+      "addressLine2": null,
+      "country": "France",
+      "creditLimit": 118200
+    },
+    {
+      "customerNumber": "121",
+      "customerName": "Baane Mini Imports",
+      "addressLine1": "Erling Skakkes gate 78",
+      "addressLine2": null,
+      "country": "Norway",
+      "creditLimit": 81700
+    },
+    {
+      "customerNumber": "124",
+      "customerName": "Mini Gifts Distributors Ltd.",
+      "addressLine1": "5677 Strong St.",
+      "addressLine2": null,
+      "country": "USA",
+      "creditLimit": 210500
+    },
+    {
+      "customerNumber": "125",
+      "customerName": "Havel & Zbyszek Co",
+      "addressLine1": "ul. Filtrowa 68",
+      "addressLine2": null,
+      "country": "Poland",
+      "creditLimit": 0
+    },
+    {
+      "customerNumber": "128",
+      "customerName": "Blauer See Auto, Co.",
+      "addressLine1": "Lyonerstr. 34",
+      "addressLine2": null,
+      "country": "Germany",
+      "creditLimit": 59700
+    },
+    {
+      "customerNumber": "129",
+      "customerName": "Mini Wheels Co.",
+      "addressLine1": "5557 North Pendale Street",
+      "addressLine2": null,
+      "country": "USA",
+      "creditLimit": 64600
+    },
+    {
+      "customerNumber": "131",
+      "customerName": "Land of Toys Inc.",
+      "addressLine1": "897 Long Airport Avenue",
+      "addressLine2": null,
+      "country": "USA",
+      "creditLimit": 114900
+    }
+  ]
+}
