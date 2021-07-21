@@ -1,5 +1,5 @@
-import graphene
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from starlette.graphql import GraphQLApp
 
 from .schema import schema
@@ -7,6 +7,15 @@ from .database import db_session
 
 app = FastAPI()
 
+origins = ".*"
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origin_regex = origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def index():
